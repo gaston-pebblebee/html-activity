@@ -1,0 +1,40 @@
+<html><head>
+    <title>Dijkstra shortest path</title>
+    <style>    
+      body {
+        background-color: lightblue;
+  
+      }
+    </style>
+    <meta name="author" content="gaston">
+    <meta name="author" content="glifschitz">
+    </head>
+    <body onload="randomizeButtonPositions()">  
+      <h1>Steps</h1>
+      <ul>
+        <li>For each node N:</li>
+        <ul>
+            <li>initialize N’s visited mark to false</li>
+            <li>initialize N’s path to null</li>
+        </ul>
+        <li>create minimum priority queue pq for paths</li>
+        <li>pq.insert( [ S->S: 0 ] )</li>
+        <li>while ( !pq.isEmpty() ):</li>
+        <ul>
+            <li>[ S->...->C: Cost ] = pq.removeMin()</li>
+            <li>if C’S path == null:</li>
+            <ul>
+                <li>set C’s visited mark to true</li>
+                <li>set C’s shortest path to [ S->...->C: Cost ] </li>
+                <li>for each edge with weight W to unvisited successor U of C:</li>
+                <ul>
+                    <li>pq.insert( [S->...->C->U: Cost + W] )</li>
+                </ul>
+            </ul>
+        </ul>
+      </ul>
+      <h1>Example</h1>
+      <img width="300"src="https://www.researchgate.net/profile/Atta-Ur-Rehman-6/publication/331484960/figure/fig1/AS:732550733512704@1551665113143/Illustration-of-Dijkstras-algorithm.ppm" />
+      <p><a href="https://www.google.com/search?q=dijkstra+algorithm&oq=dijk&aqs=chrome.0.69i59j46i512j69i59j0i67j0i512j69i61j69i60j69i61.1098j0j7&sourceid=chrome&ie=UTF-8#:~:text=Dijkstra%27s%20algorithm%20%2D%20Wikipedia,org%20%E2%80%BA%20wiki%20%E2%80%BA%20Di...">Wikipedia</a></p>
+  </body></html>
+  
